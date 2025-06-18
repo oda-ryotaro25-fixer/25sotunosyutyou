@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+
+    <title>
+      【極秘公開】年収340万円の新入社員が10年で資産1000万円を築く禁断のメソッド
+    </title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Hiragino Sans', 'Yu Gothic', 'Meiryo', sans-serif;
+        background-color: #1a1a1a;
+        color: #ffffff;
+        line-height: 1.8;
+      }
+
+      /* ヘッダー */
+      .hero-section {
+        background: linear-gradient(135deg, #ffd700 0%, #ff6b6b 100%);
+        padding: 40px 20px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-section::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: repeating-linear-gradient(
+          45deg,
+          transparent,
+          transparent 10px,
+          rgba(255, 255, 255, 0.1) 10px,
+          rgba(255, 255, 255, 0.1) 20px
+        );
+        animation: slide 20s linear infinite;
+      }
+
+      @keyframes slide {
+        0% {
+          transform: translate(0, 0);
+        }
+        100% {
+          transform: translate(50px, 50px);
+        }
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 1;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .warning-badge {
+        display: inline-block;
+        background: #ff0000;
+        color: white;
+        padding: 5px 20px;
+        border-radius: 20px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        animation: pulse 2s infinite;
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        color: #1a1a1a;
+      }
+
+      .subtitle {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+        color: #1a1a1a;
+      }
+
+      /* カウントダウンタイマー */
+      .countdown {
+        background: rgba(0, 0, 0, 0.8);
+        padding: 20px;
+        border-radius: 10px;
+        margin: 20px 0;
+        font-size: 1.5rem;
+        color: #ffd700;
+      }
+
+      /* メインコンテンツ */
+      .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      .section {
+        background: #2a2a2a;
+        margin: 40px 0;
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .section::before {
+        content: 'SECRET';
+        position: absolute;
+        top: 20px;
+        right: -30px;
+        background: #ff6b6b;
+        color: white;
+        padding: 5px 40px;
+        transform: rotate(45deg);
+        font-weight: bold;
+        font-size: 0.8rem;
+      }
+
+      h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        color: #ffd700;
+        border-bottom: 3px solid #ffd700;
+        padding-bottom: 10px;
+      }
+
+      .highlight-box {
+        background: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 100%);
+        padding: 30px;
+        border-radius: 15px;
+        margin: 30px 0;
+        box-shadow: 0 5px 20px rgba(255, 107, 107, 0.5);
+      }
+
+      .price-slash {
+        text-align: center;
+        margin: 40px 0;
+        font-size: 2rem;
+      }
+
+      .original-price {
+        text-decoration: line-through;
+        color: #999;
+        font-size: 1.5rem;
+      }
+
+      .special-price {
+        color: #ffd700;
+        font-size: 3rem;
+        font-weight: bold;
+        animation: blink 1s infinite;
+      }
+
+      @keyframes blink {
+        0%,
+        50%,
+        100% {
+          opacity: 1;
+        }
+        25%,
+        75% {
+          opacity: 0.5;
+        }
+      }
+
+      /* グラフ画像 */
+      .graph-container {
+        margin: 30px 0;
+        text-align: center;
+      }
+
+      .graph-container img {
+        max-width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        margin: 20px 0;
+      }
+
+      /* 証言セクション */
+      .testimonial {
+        background: #3a3a3a;
+        padding: 30px;
+        border-radius: 15px;
+        margin: 20px 0;
+        border-left: 5px solid #ffd700;
+      }
+
+      .testimonial-header {
+        font-weight: bold;
+        color: #4ecdc4;
+        margin-bottom: 10px;
+      }
+
+      /* CTA ボタン */
+      .cta-button {
+        display: inline-block;
+        background: linear-gradient(135deg, #ffd700 0%, #ff6b6b 100%);
+        color: #1a1a1a;
+        padding: 20px 60px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-decoration: none;
+        border-radius: 50px;
+        box-shadow: 0 10px 30px rgba(255, 215, 0, 0.5);
+        transition: all 0.3s;
+        animation: shake 2s infinite;
+      }
+
+      @keyframes shake {
+        0%,
+        100% {
+          transform: translateX(0);
+        }
+        10%,
+        30%,
+        50%,
+        70%,
+        90% {
+          transform: translateX(-5px);
+        }
+        20%,
+        40%,
+        60%,
+        80% {
+          transform: translateX(5px);
+        }
+      }
+
+      .cta-button:hover {
+        transform: scale(1.1);
+        box-shadow: 0 15px 40px rgba(255, 215, 0, 0.7);
+      }
+
+      /* 限定性を演出 */
+      .limited-offer {
+        background: #ff0000;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        font-size: 1.2rem;
+        margin: 40px 0;
+        border-radius: 10px;
+        animation: flash 1s infinite;
+      }
+
+      @keyframes flash {
+        0%,
+        100% {
+          background: #ff0000;
+        }
+        50% {
+          background: #ff6b6b;
+        }
+      }
+
+      /* チェックマーク */
+      .check-list {
+        list-style: none;
+        margin: 20px 0;
+      }
+
+      .check-list li {
+        padding: 10px 0;
+        padding-left: 40px;
+        position: relative;
+      }
+
+      .check-list li::before {
+        content: '✓';
+        position: absolute;
+        left: 0;
+        color: #4ecdc4;
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+
+      /* 警告ボックス */
+      .warning-box {
+        background: rgba(255, 0, 0, 0.2);
+        border: 2px solid #ff0000;
+        padding: 20px;
+        border-radius: 10px;
+        margin: 30px 0;
+        text-align: center;
+      }
+
+      .warning-box h3 {
+        color: #ff6b6b;
+        margin-bottom: 10px;
+      }
+
+      /* レスポンシブ */
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 1.8rem;
+        }
+        .section {
+          padding: 20px;
+        }
+        .cta-button {
+          padding: 15px 40px;
+          font-size: 1.2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ヒーローセクション -->
+    <div class="hero-section">
+      <div class="hero-content">
+        <div class="warning-badge">⚠️ 期間限定公開 ⚠️</div>
+
+        <h1>
+          【極秘公開】年収340万円の新入社員が<br />10年で資産1000万円を築く禁断のメソッド
+        </h1>
+
+        <p class="subtitle">
+          〜 IT企業378名の社員データから導き出された衝撃の資産形成術 〜
+        </p>
+
+        <div
+          class="countdown"
+          id="countdown"
+        >
+          残り時間: <span id="timer">23:59:59</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- 衝撃の事実 -->
+      <div class="section">
+        <h2>🔥 衝撃の事実...あなたは知っていましたか？</h2>
+
+        <div class="highlight-box">
+          <p style="font-size: 1.3rem; text-align: center">
+            同じ会社、同じ給料でスタートした新入社員でも<br />
+            <span style="font-size: 2rem; color: #ffd700"
+              >10年後には1,483万円もの資産格差</span
+            ><br />
+            が生まれているという事実を...
+          </p>
+        </div>
+
+        <div class="graph-container">
+          <img
+            src="asset_simulation_graphs/01_asset_comparison_by_group.png"
+            alt="資産格差の衝撃的なグラフ"
+          />
+          <p style="color: #999; font-size: 0.9rem">
+            ※実際の企業データに基づくシミュレーション結果
+          </p>
+        </div>
+
+        <div class="testimonial">
+          <div class="testimonial-header">28歳 IT企業勤務 Aさんの証言</div>
+
+          <p>
+            「同期は皆、飲み会や趣味にお金を使っていましたが、私はこのメソッドを知って実践しただけ。今では資産700万円を超え、同期との差は歴然です...」
+          </p>
+        </div>
+      </div>
+      <!-- なぜ差がつくのか -->
+      <div class="section">
+        <h2>📊 なぜ、これほどまでに差がつくのか？</h2>
+
+        <p>その答えは、たった一つの「違い」にありました...</p>
+
+        <div class="graph-container">
+          <img
+            src="career_simulation_graphs/05_career_progression.png"
+            alt="キャリア進行の違い"
+          />
+        </div>
+
+        <div class="highlight-box">
+          <h3 style="text-align: center; margin-bottom: 20px">
+            成功者が必ず実践している3つの法則
+          </h3>
+
+          <ul class="check-list">
+            <li>毎月たった3万円から始める「自動資産増</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
