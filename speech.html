@@ -1,0 +1,513 @@
+<!DOCTYPE html> 
+<html lang="ja">
+   <head>
+     
+    <meta charset="UTF-8" />
+     
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+     
+    <title>お金という幻想について - プチブルの小田竜太郎</title>
+     
+    <style>
+      
+              * {
+                  margin: 0;
+                  padding: 0;
+                  box-sizing: border-box;
+              }
+
+              body {
+                  font-family: 'Noto Serif JP', 'Georgia', serif;
+                  line-height: 1.8;
+                  color: #2c2c2c;
+                  background-color: #f5f5f0;
+              }
+
+              .container {
+                  max-width: 800px;
+                  margin: 0 auto;
+                  padding: 60px 20px;
+                  background-color: #ffffff;
+                  min-height: 100vh;
+                  box-shadow: 0 0 20px rgba(0,0,0,0.05);
+              }
+
+              header {
+                  text-align: center;
+                  margin-bottom: 80px;
+                  border-bottom: 2px solid #1a1a1a;
+                  padding-bottom: 40px;
+              }
+
+              h1 {
+                  font-size: 2.5rem;
+                  font-weight: 300;
+                  letter-spacing: 0.1em;
+                  margin-bottom: 20px;
+                  color: #1a1a1a;
+              }
+
+              .author {
+                  font-size: 1.1rem;
+                  color: #666;
+                  font-style: italic;
+              }
+
+              .intro {
+                  font-size: 1.2rem;
+                  margin-bottom: 60px;
+                  text-align: center;
+                  font-style: italic;
+                  color: #444;
+                  padding: 30px;
+                  border-left: 3px solid #1a1a1a;
+                  border-right: 3px solid #1a1a1a;
+              }
+
+              h2 {
+                  font-size: 2rem;
+                  margin: 60px 0 30px;
+                  font-weight: 400;
+                  letter-spacing: 0.05em;
+                  position: relative;
+                  padding-left: 20px;
+              }
+
+              h2::before {
+                  content: '';
+                  position: absolute;
+                  left: 0;
+                  top: 50%;
+                  transform: translateY(-50%);
+                  width: 4px;
+                  height: 100%;
+                  background-color: #1a1a1a;
+              }
+
+              h3 {
+                  font-size: 1.5rem;
+                  margin: 40px 0 20px;
+                  font-weight: 400;
+                  color: #333;
+              }
+
+              p {
+                  margin-bottom: 25px;
+                  text-align: justify;
+                  font-size: 1.05rem;
+              }
+
+              .highlight {
+                  background-color: #f0f0e8;
+                  padding: 2px 6px;
+                  font-weight: 500;
+              }
+
+              .question {
+                  font-size: 1.8rem;
+                  text-align: center;
+                  margin: 60px 0;
+                  font-weight: 500;
+                  color: #1a1a1a;
+              }
+
+              .tier-list {
+                  margin: 40px 0;
+                  padding: 30px;
+                  background-color: #fafaf8;
+                  border: 1px solid #ddd;
+              }
+
+              .tier-item {
+                  margin: 15px 0;
+                  padding: 15px;
+                  background-color: #fff;
+                  border-left: 4px solid #1a1a1a;
+              }
+
+              .tier-label {
+                  font-weight: 600;
+                  font-size: 1.2rem;
+                  margin-bottom: 5px;
+              }
+
+              .tier-f { border-left-color: #d32f2f; }
+              .tier-c { border-left-color: #7b1fa2; }
+              .tier-b { border-left-color: #1976d2; }
+              .tier-a { border-left-color: #388e3c; }
+              .tier-s { border-left-color: #fbc02d; }
+
+              .emphasis {
+                  font-size: 1.15rem;
+                  font-weight: 500;
+                  color: #1a1a1a;
+                  margin: 40px 0;
+                  padding: 20px;
+                  border-top: 1px solid #ccc;
+                  border-bottom: 1px solid #ccc;
+                  text-align: center;
+              }
+
+              .conclusion {
+                  margin-top: 80px;
+                  padding: 40px;
+                  background-color: #f8f8f6;
+                  border: 2px solid #1a1a1a;
+                  font-size: 1.1rem;
+              }
+
+              .irony {
+                  font-style: italic;
+                  color: #666;
+                  margin-top: 40px;
+                  padding: 20px;
+                  background-color: #fefefe;
+                  border-left: 3px solid #999;
+              }
+
+              blockquote {
+                  margin: 30px 0;
+                  padding: 20px 30px;
+                  background-color: #f9f9f7;
+                  border-left: 4px solid #1a1a1a;
+                  font-style: italic;
+              }
+
+              .numbered-list {
+                  margin: 30px 0;
+                  padding-left: 40px;
+              }
+
+              .numbered-list li {
+                  margin-bottom: 15px;
+                  font-size: 1.05rem;
+              }
+          
+    </style>
+     </head
+  > 
+  <body>
+     
+    <div class="container">
+       
+      <header>
+         
+        <h1>お金という幻想について</h1>
+         
+        <p class="author">プチブルの小田竜太郎</p>
+         
+      </header>
+       
+      <div class="intro">
+         「お金が大好きな人々」を、私はあえて「貧しい」と呼ぶ。<br />
+        なぜなら、彼らは本当の豊かさを知らないからだ。 
+      </div>
+       
+      <section>
+         
+        <h2>序章：ある朝会での問いかけ</h2>
+         
+        <p>
+          
+          おはようございます、プチブルの小田竜太郎です。日頃は東京の債務者の斎っていうやつの教育係をしています。
+          
+        </p>
+         
+        <p>
+          
+          今日はこの朝会の時間を借りてお金の話についてしていこうと思います。実はわたしはこう見えて学生時代に金融について全く専門に学んだことがなく、全くの素人ですが、不束者ながらインターネットで集めた適当な知識をこれから皆さんにお教えしたいとおもいます。
+          
+        </p>
+         
+        <p class="question">皆さんはお金は好きですか？</p>
+         
+        <p class="emphasis">私は嫌いです。</p>
+         
+        <p>
+          
+          どうやらこの会社にはお金が大好きな貧しい人々が多くいるかと感じますが、そんなにお金が好きならエンジニアのような職業でなく、お金自身に金稼ぎしてもらうような銀行や保険会社といった<span
+            class="highlight"
+            >虚業</span
+          >を生業にしている会社に転職することをおすすめします。 
+        </p>
+         
+        <p>
+          
+          今回の発表を通じて皆さんにはお金を嫌いになってもらい、正しいお金の使い方を理解してもらえたらなと考えています。
+          
+        </p>
+         
+      </section>
+       
+      <section>
+         
+        <h2>第一章：お金という幻想</h2>
+         
+        <p>
+          
+          大前提としてお金とはいったいなんなのでしょうか。そもそも皆さんが現在お金だと思っているものには実用的な価値はほとんど存在せず、ただの紙であったり、ただの金属片であったり、ただのデータであったりする訳です。
+          
+        </p>
+         
+        <p>
+          
+          ではなぜこれらに価値があるとされているのか、それはこれらが実際に価値のあるものと交換できる、ないしはみんながこれに価値があると信じているからです。
+          
+        </p>
+         
+        <blockquote>
+          
+          つまるところ金の価値という「幻想」をみんなで共有することで、現実の価値として機能しています。
+          
+        </blockquote>
+         
+      </section>
+       
+      <section>
+         
+        <h2>第二章：お金を稼ぐ三つの方法</h2>
+         
+        <p>そしてお金を稼ぐとは大きく分けて3種類あります。</p>
+         
+        <ol class="numbered-list">
+           
+          <li><strong>報酬</strong> - 成果に対して払われるお金</li>
+           
+          <li>
+            <strong>給料</strong> - 労働力と時間に対して払われるお金
+          </li>
+           
+          <li><strong>資産の活用</strong> - いわゆる不労所得</li>
+           
+        </ol>
+         
+        <p>
+          
+          給料のメリットは私たちのような全く生産的なことをしていない研修生でも、会社に所属しているというだけで平等にお金がもらえるということです。うれしいですね。
+          
+        </p>
+         
+        <p>
+          
+          次に資産の活用ですが、これは所謂不労所得のことです。資本主義システムのもっとも根幹をなす機能に<span
+            class="highlight"
+            >資本の自己増殖</span
+          >というものがあり、これによって資本を持つものがさらに大きな資本を得ることができます。
+          
+        </p>
+         
+      </section>
+       
+      <section>
+         
+        <h2>第三章：r > g という不都合な真実</h2>
+         
+        <p>
+           一般に世界全体の資本収益率は労働による経済成長率を上回る（r >
+          g）ということが知られています。 
+        </p>
+         
+        <blockquote>
+           あなたが一生懸命働いて、毎年3%昇給したとします（g=経済成長率）。<br />
+          しかし、資産を持つ人は何もしなくても年5%のリターンを得ています（r=資本収益率）。
+          
+        </blockquote>
+         
+        <p>
+           日本の平均労働者年収は450万円、富裕層の資本収益:
+          3,000万円で比率は<strong>1：7</strong>です。ちなみにアメリカの比率は<strong>1:167</strong>というデータがあり、それを考えると日本はとても健全ですね。
+          
+        </p>
+         
+        <p>
+          
+          このように資産の活用による収益が最も効率的にお金を生み出すことがわかります。冒頭で銀行や保険会社を「虚業」と呼んだのはこのためです。
+          
+        </p>
+         
+      </section>
+       
+      <section>
+         
+        <h2>第四章：二つの豊かさ</h2>
+         
+        <p>
+          
+          それではこのような社会の中で私たちが豊かに生活するにはどうすればいいでしょうか。これを考えるにはまず豊かさについてその特徴を捉える必要があります。
+          
+        </p>
+         
+        <div class="tier-list">
+           
+          <h3>豊かさの二項対立</h3>
+           
+          <div class="tier-item">
+             
+            <div class="tier-label">1. 経済的豊かさ</div>
+             
+            <p>
+              文字通りどれだけお金を稼いでいるか、物質的豊かさともいいます。値段という明確な数字で表現できるため比較が容易です。
+            </p>
+             
+          </div>
+           
+          <div class="tier-item">
+             
+            <div class="tier-label">2. 文化的豊かさ</div>
+             
+            <p>
+              精神的なもので、人とのつながりや幸せや学術・美術的な価値があるもののことを指し、これらは主観に基づいて価値が判断されるため、比較が困難なものです。
+            </p>
+             
+          </div>
+           
+        </div>
+         
+        <blockquote>
+          
+          なぜ「お金が大好きな人々」を「貧しい」と形容したのか。それは、お金という経済的豊かさの一側面だけを追い求める人は、文化的豊かさを犠牲にしてしまうからです。
+          
+        </blockquote>
+         
+      </section>
+       
+      <section>
+         
+        <h2>第五章：お金の使い方ティアリスト</h2>
+         
+        <p>
+          
+          わたしがおすすめするお金の使い道のTier表を作ってきたのでこれを発表したいと思います。
+          
+        </p>
+         
+        <div class="tier-list">
+           
+          <div class="tier-item tier-f">
+             
+            <div class="tier-label">Tier F - 貧者がとる愚鈍な選択肢</div>
+             
+            <p>ギャンブル、見栄、ワンルーム投資、リボ払い</p>
+             
+            <p>
+              FはFoolishのFで貧者がとる愚鈍な選択肢をここにいれました。Fの使い道をしている人は馬鹿です。悔い改めてください。
+            </p>
+             
+          </div>
+           
+          <div class="tier-item tier-c">
+             
+            <div class="tier-label">Tier C</div>
+             
+            <p>貯金、寄付</p>
+             
+            <p>何かあったときのために一定額貯金はしておきましょう。</p>
+             
+          </div>
+           
+          <div class="tier-item tier-b">
+             
+            <div class="tier-label">Tier B</div>
+             
+            <p>趣味、人付き合い、金融投資</p>
+             
+            <p>
+              文化的な豊かさへの投資も忘れずに。金融投資はNISA、iDeCoがおすすめ。
+            </p>
+             
+          </div>
+           
+          <div class="tier-item tier-a">
+             
+            <div class="tier-label">Tier A</div>
+             
+            <p>自己投資、健康投資</p>
+             
+            <p>
+              将来の自分のためにお金を使おう。健康は値段に換算できない最たる例です。
+            </p>
+             
+          </div>
+           
+          <div class="tier-item tier-s">
+             
+            <div class="tier-label">Tier</div>
+                          <div class="tier-item tier-s">
+                    <div class="tier-label">Tier S - 最強のサブスク</div>
+                    <p>納税</p>
+                    <p>月に一定額払うだけで大規模で高品質な数えきれないほどのサービスを受けることができます。</p>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>第六章：長期分散インデックス投資という必勝法</h2>
+            <p>
+                金融投資はすべてギャンブルだろと考える人がいるかと思います。実は金融投資には必勝法があります。これを学べば金融知識がないどんな馬鹿でも100割の確率で資産を増やすことができ、DQNに絡まれたときも無意識のうちに相手を血まみれにすることができ、アスナ似の彼女ができます。
+            </p>
+            <p class="emphasis">
+                その必勝法が長期分散インデックス投資です。
+            </p>
+            <p>
+                そんな長期分散インデックス投資を非課税でできる制度がNISAです。積み立てNISAは2024年以降月に10万まで投資できるので、とりあえずこの額を増やすことを目標にするのがいいと思います。
+            </p>
+            <blockquote>
+                投資する銘柄を選ばなければいけないのですが、S&P500か全世界か入れとけばいいと思います。あんま大差ないと思ってます。
+            </blockquote>
+            <p>
+                貯金額とのバランスなんですが、<span class="highlight">(100-年齢)%金融投資に回す</span>という方法が直感的にわかりやすくて個人的に基準として採用してます。
+            </p>
+        </section>
+        
+        <section>
+            <h2>第七章：最強のサブスク「納税」</h2>
+            <p>
+                最近社会人になり実際の納税額をみてがっかりしている方を多く見かけましたが、健康で文化的な最低限度の生活が保証され、蛇口をひねれば飲み水がでてきて、きれいに舗装された道を歩け、コンセントからは常に電気が供給され、世界中のいろいろなデータに自由にアクセスすることができて、こうして言いたいことを言たり、悪い大人や怖い国から守ってもらえます。
+            </p>
+            <blockquote>
+                こうしたサービスのほぼすべては納税額に関わらず享受でき、自分たちのようにせっせと働いてもさしたる額を納税できないような中間層の人間でも、お金持ちの高額納税者様のおかげでこうしたサービスを受けられるわけなので感謝しかないですね。
+            </blockquote>
+            <p>
+                実は納税をしているとこれも解決してくれます。年金とかいうサービスが国が勝手に（強制的に）国民全体のお金をひとまとめにして運用してくれるというものです。年金制度はいつか限界がくると私自身も以前まであたりまえに考えていましたが、よく調べてみると意外となんとかなるらしいです。
+            </p>
+        </section>
+        
+        <section>
+            <h2>終章：数値化できないものの価値</h2>
+            <div class="conclusion">
+                <p>
+                    結論としては、わたしたちはこの世のすべてを数値化できるほど頭がよくないのでそれを自覚し、明確でわかりやすい数字に惑わされず、数値化できないものも大切にしていきましょうということが今回の伝えたいメッセージです。
+                </p>
+                <p class="emphasis">
+                    真の豊かさとは、経済的豊かさと文化的豊かさの両方をバランスよく手に入れることです。<br>
+                    お金はそのための道具に過ぎません。<br>
+                    道具に支配される人生ほど、貧しいものはないのです。
+                </p>
+            </div>
+            
+            <div class="irony">
+                <h3>追記：今すぐ金が欲しい人へ</h3>
+                <p>
+                    とここで終わってもいいのですが、皆さんのなかには「将来の資産なんでどうだっていいから今すぐ金が欲しい！！」というひとももちろんいるかと思います。
+                </p>
+                <p>
+                    資産運用のベストプラクティスは長い期間でリスクを分散しながら感情に左右されずにお金を運用しようというものでしたが、今すぐお金が欲しい人はこの逆をすればいいんです。
+                </p>
+                <p>
+                    短期的に高リスクなものを一発逆転を狙って感情的に運用することで、大稼ぎできる可能性があります。つまり欲望のままにストゼロキメていっぱい借金して、それを全部高レバレッジのFXにぶちこみましょう。そしたら明日にはあなたも億万長者になれるかも！
+                </p>
+                <p style="font-weight: bold; color: #333;">
+                    逆の逆に将来お金持ちになりたいなら、こういう人の逆をやればいいということです。ね、簡単でしょ？
+                </p>
+            </div>
+            
+            <p style="text-align: center; margin-top: 60px; font-size: 1.2rem; font-style: italic;">
+                ご清聴ありがとうございました。
+            </p>
+        </section>
+    </div>
+</body>
+</html>
