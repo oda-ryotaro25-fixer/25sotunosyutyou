@@ -8,7 +8,9 @@
       content="width=device-width, initial-scale=1.0"
     />
 
-    <title>新入社員のための資産形成完全ガイド - 詳細解説</title>
+    <title>
+      IT企業新入社員のための資産形成完全マニュアル - 378名の実データ分析
+    </title>
 
     <style>
       * {
@@ -19,806 +21,1241 @@
 
       body {
         font-family: 'Hiragino Sans', 'Yu Gothic', 'Meiryo', sans-serif;
-        background-color: #f5f5f5;
+        background-color: #f8f9fa;
         color: #333;
         line-height: 1.8;
       }
 
       /* ヘッダー */
-      header {
-        background: linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%);
+      .header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         color: white;
-        padding: 60px 20px;
+        padding: 80px 20px;
         text-align: center;
       }
 
-      header h1 {
-        font-size: 2.5rem;
+      .header h1 {
+        font-size: 2.8rem;
         margin-bottom: 20px;
-        font-weight: normal;
+        font-weight: 300;
       }
 
-      header p {
-        font-size: 1.2rem;
-        opacity: 0.9;
+      .company-info {
+        background: rgba(255, 255, 255, 0.1);
+        display: inline-block;
+        padding: 20px 40px;
+        border-radius: 10px;
+        margin-top: 20px;
+      }
+
+      .company-info span {
+        display: inline-block;
+        margin: 0 20px;
+        font-size: 1.1rem;
       }
 
       /* ナビゲーション */
-      nav {
+      .nav {
         background: white;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         position: sticky;
         top: 0;
-        z-index: 100;
+        z-index: 1000;
+        padding: 0 20px;
       }
 
-      nav ul {
+      .nav-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .nav ul {
         list-style: none;
         display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        max-width: 1200px;
-        margin: 0 auto;
+        margin: 0;
+        padding: 0;
       }
 
-      nav li {
-        margin: 0 20px;
-      }
-
-      nav a {
+      .nav a {
         display: block;
-        padding: 15px 0;
+        padding: 20px 25px;
         color: #333;
         text-decoration: none;
-        transition: color 0.3s;
+        transition: all 0.3s;
+        font-weight: 500;
       }
 
-      nav a:hover {
-        color: #4ecdc4;
+      .nav a:hover {
+        background: #f8f9fa;
+        color: #667eea;
       }
 
-      /* メインコンテンツ */
+      /* メインコンテナ */
       .container {
-        max-width: 1200px;
+        max-width: 1400px;
         margin: 0 auto;
-        padding: 40px 20px;
+        padding: 60px 20px;
       }
 
+      /* セクション */
       .section {
         background: white;
-        margin: 40px 0;
-        padding: 40px;
-        border-radius: 10px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        margin: 60px 0;
+        padding: 60px;
+        border-radius: 20px;
+        box-shadow: 0 5px 30px rgba(0, 0, 0, 0.08);
       }
 
       h2 {
-        font-size: 2rem;
-        margin-bottom: 30px;
-        color: #44a08d;
-        border-bottom: 3px solid #4ecdc4;
-        padding-bottom: 10px;
+        font-size: 2.5rem;
+        margin-bottom: 40px;
+        color: #667eea;
+        font-weight: 300;
+        position: relative;
+        padding-bottom: 20px;
+      }
+
+      h2::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100px;
+        height: 4px;
+        background: linear-gradient(90deg, #667eea, #764ba2);
+        border-radius: 2px;
       }
 
       h3 {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
+        margin: 40px 0 25px;
+        color: #444;
+        font-weight: 500;
+      }
+
+      h4 {
+        font-size: 1.4rem;
         margin: 30px 0 20px;
-        color: #333;
+        color: #555;
+        font-weight: 500;
       }
 
       /* グラフコンテナ */
+      .graph-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+        gap: 40px;
+        margin: 40px 0;
+      }
+
       .graph-container {
-        margin: 30px 0;
+        background: #f8f9fa;
+        padding: 30px;
+        border-radius: 15px;
         text-align: center;
       }
 
       .graph-container img {
         max-width: 100%;
         height: auto;
-        border-radius: 8px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .graph-title {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 20px;
+        color: #667eea;
       }
 
       .graph-caption {
-        margin-top: 15px;
-        font-size: 0.9rem;
+        margin-top: 20px;
+        font-size: 0.95rem;
         color: #666;
-        font-style: italic;
+        line-height: 1.6;
       }
 
-      /* テーブル */
-      table {
+      /* データテーブル */
+      .data-table {
         width: 100%;
         border-collapse: collapse;
-        margin: 20px 0;
+        margin: 30px 0;
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
       }
 
-      th,
-      td {
-        padding: 12px;
+      .data-table th {
+        background: #667eea;
+        color: white;
+        padding: 20px;
         text-align: left;
-        border-bottom: 1px solid #ddd;
+        font-weight: 500;
       }
 
-      th {
-        background: #4ecdc4;
+      .data-table td {
+        padding: 20px;
+        border-bottom: 1px solid #eee;
+      }
+
+      .data-table tr:hover {
+        background: #f8f9fa;
+      }
+
+      .data-table tr:last-child td {
+        border-bottom: none;
+      }
+
+      /* インサイトボックス */
+      .insight-box {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         color: white;
-        font-weight: normal;
+        padding: 40px;
+        border-radius: 15px;
+        margin: 40px 0;
+        position: relative;
+        overflow: hidden;
       }
 
-      tr:hover {
-        background: #f9f9f9;
+      .insight-box::before {
+        content: '💡';
+        position: absolute;
+        top: -20px;
+        right: 20px;
+        font-size: 100px;
+        opacity: 0.1;
       }
 
-      /* ハイライトボックス */
-      .highlight-box {
-        background: #e8f5f3;
-        border-left: 5px solid #4ecdc4;
-        padding: 20px;
+      .insight-box h4 {
+        color: white;
+        margin-bottom: 20px;
+        font-size: 1.6rem;
+      }
+
+      /* アラートボックス */
+      .alert-box {
+        padding: 30px;
+        border-radius: 10px;
         margin: 30px 0;
-        border-radius: 5px;
+        position: relative;
+        padding-left: 60px;
       }
 
-      .warning-box {
-        background: #fff3cd;
-        border-left: 5px solid #ffc107;
-        padding: 20px;
-        margin: 30px 0;
-        border-radius: 5px;
+      .alert-box::before {
+        position: absolute;
+        left: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 24px;
       }
 
-      .success-box {
+      .alert-success {
         background: #d4edda;
-        border-left: 5px solid #28a745;
-        padding: 20px;
-        margin: 30px 0;
-        border-radius: 5px;
+        border: 1px solid #c3e6cb;
+        color: #155724;
       }
 
-      /* アクションボタン */
-      .action-button {
-        display: inline-block;
-        background: #4ecdc4;
-        color: white;
-        padding: 15px 40px;
-        text-decoration: none;
-        border-radius: 30px;
-        transition: all 0.3s;
-        margin: 20px 0;
+      .alert-success::before {
+        content: '✅';
       }
 
-      .action-button:hover {
-        background: #44a08d;
-        transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      .alert-warning {
+        background: #fff3cd;
+        border: 1px solid #ffeaa7;
+        color: #856404;
       }
 
-      /* フッター */
-      footer {
-        background: #333;
-        color: white;
+      .alert-warning::before {
+        content: '⚠️';
+      }
+
+      .alert-danger {
+        background: #f8d7da;
+        border: 1px solid #f5c6cb;
+        color: #721c24;
+      }
+
+      .alert-danger::before {
+        content: '❌';
+      }
+
+      /* ステップガイド */
+      .step-guide {
+        display: flex;
+        justify-content: space-between;
+        margin: 40px 0;
+        position: relative;
+      }
+
+      .step-guide::before {
+        content: '';
+        position: absolute;
+        top: 40px;
+        left: 10%;
+        right: 10%;
+        height: 2px;
+        background: #ddd;
+        z-index: 0;
+      }
+
+      .step {
+        flex: 1;
         text-align: center;
-        padding: 40px 20px;
-        margin-top: 80px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .step-number {
+        width: 80px;
+        height: 80px;
+        background: #667eea;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin: 0 auto 20px;
+        box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
+      }
+
+      .step-title {
+        font-weight: 600;
+        margin-bottom: 10px;
+        color: #333;
+      }
+
+      .step-description {
+        font-size: 0.9rem;
+        color: #666;
       }
 
       /* レスポンシブ */
       @media (max-width: 768px) {
-        header h1 {
-          font-size: 1.8rem;
+        .header h1 {
+          font-size: 2rem;
         }
         .section {
-          padding: 20px;
+          padding: 30px;
         }
-        nav li {
-          margin: 0 10px;
+        .graph-grid {
+          grid-template-columns: 1fr;
+        }
+        .step-guide {
+          flex-direction: column;
+        }
+        .step-guide::before {
+          display: none;
         }
       }
     </style>
   </head>
   <body>
-    <header>
-      <h1>新入社員のための資産形成完全ガイド</h1>
+    <header class="header">
+      <h1>IT企業新入社員のための資産形成完全マニュアル</h1>
 
-      <p>データに基づく現実的な投資戦略と実践方法</p>
+      <p style="font-size: 1.3rem; margin-bottom: 30px">
+        上場3年目・急成長企業の実データに基づく分析
+      </p>
+
+      <div class="company-info">
+        <span>👥 従業員数: 378名</span> <span>📊 平均年齢: 27.8歳</span>
+        <span>💰 初任給: 340万円</span> <span>🎓 新卒採用: 54名/年</span>
+      </div>
     </header>
 
-    <nav>
-      <ul>
-        <li><a href="#overview">概要</a></li>
+    <nav class="nav">
+      <div class="nav-container">
+        <div style="font-weight: bold; color: #667eea">
+          IT企業資産形成ガイド
+        </div>
 
-        <li><a href="#simulation">シミュレーション</a></li>
+        <ul>
+          <li><a href="#company-analysis">企業分析</a></li>
 
-        <li><a href="#career">キャリア分析</a></li>
+          <li><a href="#career-path">キャリアパス</a></li>
 
-        <li><a href="#investment">投資戦略</a></li>
+          <li><a href="#asset-simulation">資産シミュレーション</a></li>
 
-        <li><a href="#life-events">ライフプラン</a></li>
+          <li><a href="#life-planning">ライフプラン</a></li>
 
-        <li><a href="#action">実践ガイド</a></li>
-      </ul>
+          <li><a href="#action-plan">実践プラン</a></li>
+        </ul>
+      </div>
     </nav>
 
     <div class="container">
-      <!-- 概要セクション -->
+      <!-- 企業分析セクション -->
       <section
-        id="overview"
+        id="company-analysis"
         class="section"
       >
-        <h2>1. はじめに - なぜ今、資産形成が必要なのか</h2>
+        <h2>1. あなたの会社の現状分析</h2>
 
-        <div class="highlight-box">
-          <p>
-            <strong>重要：</strong
-            >このガイドは、IT企業（従業員378名、平均年齢27.8歳）の実際のデータに基づいて作成されています。新卒初任給340万円からスタートし、どのように資産を形成していくかを具体的に解説します。
-          </p>
-        </div>
+        <div class="insight-box">
+          <h4>この会社の特徴</h4>
 
-        <h3>1.1 シミュレーションの前提条件</h3>
+          <ul style="list-style: none; padding: 0">
+            <li>✨ 平均年齢27.8歳という若い組織 → 実力主義でチャンスが多い</li>
 
-        <table>
-          <tr>
-            <th>項目</th>
+            <li>✨ 上場3年目の急成長企業 → 昇進・昇給のスピードが速い</li>
 
-            <th>設定値</th>
+            <li>✨ IT業界 → 市場価値の高いスキルが身につく</li>
 
-            <th>備考</th>
-          </tr>
-
-          <tr>
-            <td>初任給</td>
-
-            <td>340万円</td>
-
-            <td>IT企業の標準的な水準</td>
-          </tr>
-
-          <tr>
-            <td>手取り率</td>
-
-            <td>約80%</td>
-
-            <td>税金・社会保険料控除後</td>
-          </tr>
-
-          <tr>
-            <td>想定利回り</td>
-
-            <td>年率5%</td>
-
-            <td>全世界株式の長期平均</td>
-          </tr>
-
-          <tr>
-            <td>投資期間</td>
-
-            <td>10-20年</td>
-
-            <td>長期積立投資</td>
-          </tr>
-        </table>
-
-        <h3>1.2 3つのパフォーマンスグループ</h3>
-
-        <p>
-          同じ会社で同じ給料からスタートしても、10年後には大きな差が生まれます：
-        </p>
-
-        <ul>
-          <li>
-            <strong>上位10%：</strong
-            >積極的な自己投資とキャリア形成により、10年で年収700万円到達
-          </li>
-
-          <li><strong>標準50%：</strong>平均的な成長で、10年で年収590万円</li>
-
-          <li><strong>下位25%：</strong>緩やかな成長で、10年で年収480万円</li>
-        </ul>
-      </section>
-      <!-- シミュレーション結果 -->
-      <section
-        id="simulation"
-        class="section"
-      >
-        <h2>2. 衝撃のシミュレーション結果</h2>
-
-        <h3>2.1 10年後の資産格差</h3>
-
-        <div class="graph-container">
-          <img
-            src="asset_simulation_graphs/01_asset_comparison_by_group.png"
-            alt="グループ別資産比較"
-          />
-          <p class="graph-caption">
-            図1: パフォーマンスグループ別の資産推移比較
-          </p>
-        </div>
-
-        <div class="warning-box">
-          <p>
-            <strong>驚きの事実：</strong
-            >投資をした場合としなかった場合で、20年後には<strong>1,483万円</strong>もの差が生まれます。これは投資による運用益の差です。
-          </p>
-        </div>
-
-        <h3>2.2 全グループの投資成果</h3>
-
-        <div class="graph-container">
-          <img
-            src="asset_simulation_graphs/02_investment_comparison_all_groups.png"
-            alt="全グループ投資比較"
-          />
-          <p class="graph-caption">
-            図2: 積立投資による資産形成（全グループ比較）
-          </p>
-        </div>
-
-        <table>
-          <tr>
-            <th>グループ</th>
-
-            <th>10年後資産（投資）</th>
-
-            <th>10年後資産（貯金）</th>
-
-            <th>差額</th>
-          </tr>
-
-          <tr>
-            <td>上位10%</td>
-
-            <td>1,285万円</td>
-
-            <td>1,089万円</td>
-
-            <td>+196万円</td>
-          </tr>
-
-          <tr>
-            <td>標準50%</td>
-
-            <td>1,036万円</td>
-
-            <td>878万円</td>
-
-            <td>+158万円</td>
-          </tr>
-
-          <tr>
-            <td>下位25%</td>
-
-            <td>728万円</td>
-
-            <td>617万円</td>
-
-            <td>+111万円</td>
-          </tr>
-        </table>
-      </section>
-      <!-- キャリア分析 -->
-      <section
-        id="career"
-        class="section"
-      >
-        <h2>3. キャリアパスと年収推移</h2>
-
-        <h3>3.1 グレード別昇進シミュレーション</h3>
-
-        <div class="graph-container">
-          <img
-            src="career_simulation_graphs/05_career_progression.png"
-            alt="キャリア進行"
-          />
-          <p class="graph-caption">
-            図3: パフォーマンスグループ別のキャリア進行
-          </p>
-        </div>
-
-        <div class="highlight-box">
-          <h4>キャリアの重要な節目</h4>
-
-          <ul>
-            <li>
-              <strong>3-5年目：</strong
-              >プロフェッショナル層への昇進で初めて差がつく
-            </li>
-
-            <li>
-              <strong>8-10年目：</strong>マネージャー層への昇進が大きな分岐点
-            </li>
-
-            <li>
-              <strong>15年目以降：</strong
-              >ディレクター層は極めて限定的（全体の2-3%）
-            </li>
+            <li>✨ 年間54名の新卒採用 → 組織拡大中で管理職ポストが増加</li>
           </ul>
         </div>
 
-        <h3>3.2 年収推移の詳細</h3>
+        <h3>1.1 組織構造の詳細分析</h3>
 
         <div class="graph-container">
+          <div class="graph-title">推定組織ピラミッド</div>
           <img
-            src="career_simulation_graphs/01_salary_progression.png"
-            alt="年収推移"
+            src="career_simulation_graphs/10_organization_pyramid.png"
+            alt="組織ピラミッド"
           />
-          <p class="graph-caption">図4: グループ別年収推移</p>
+          <p class="graph-caption">
+            Director層はわずか3%（約10名）。これは一般的な大企業の半分以下の割合で、
+            若手にもチャンスがある証拠です。11年目でD2到達の実績もあります。
+          </p>
         </div>
+
+        <table class="data-table">
+          <tr>
+            <th>職位レベル</th>
+
+            <th>グレード</th>
+
+            <th>推定人数</th>
+
+            <th>構成比</th>
+
+            <th>平均年収</th>
+          </tr>
+
+          <tr>
+            <td>Director</td>
+
+            <td>D1-D3</td>
+
+            <td>8-12名</td>
+
+            <td>3%</td>
+
+            <td>980-1300万円</td>
+          </tr>
+
+          <tr>
+            <td>Manager</td>
+
+            <td>M1-M3</td>
+
+            <td>38-45名</td>
+
+            <td>11%</td>
+
+            <td>700-900万円</td>
+          </tr>
+
+          <tr>
+            <td>Professional</td>
+
+            <td>P1-P4</td>
+
+            <td>150-170名</td>
+
+            <td>43%</td>
+
+            <td>430-590万円</td>
+          </tr>
+
+          <tr>
+            <td>Basic</td>
+
+            <td>B1-B2</td>
+
+            <td>150-170名</td>
+
+            <td>43%</td>
+
+            <td>340-390万円</td>
+          </tr>
+        </table>
       </section>
-      <!-- 投資戦略 -->
+      <!-- キャリアパス分析 -->
       <section
-        id="investment"
+        id="career-path"
         class="section"
       >
-        <h2>4. 実践的な投資戦略</h2>
+        <h2>2. キャリアパスの詳細分析</h2>
 
-        <h3>4.1 月額積立額の推移</h3>
+        <h3>2.1 昇進スピードの実態</h3>
+
+        <div class="graph-grid">
+          <div class="graph-container">
+            <div class="graph-title">キャリア進行パターン</div>
+            <img
+              src="career_simulation_graphs/05_career_progression.png"
+              alt="キャリア進行"
+            />
+            <p class="graph-caption">
+              上位10%は9年目でManager層に到達。これは大手企業の約半分の期間です。
+              IT企業特有の実力主義が反映されています。
+            </p>
+          </div>
+
+          <div class="graph-container">
+            <div class="graph-title">年収推移の詳細</div>
+            <img
+              src="career_simulation_graphs/01_salary_progression.png"
+              alt="年収推移"
+            />
+            <p class="graph-caption">
+              上位10%は10年で年収が2倍以上に。標準的な成長でも1.7倍の成長が見込めます。
+              IT業界の成長性と若い組織構造が高い昇給率を実現しています。
+            </p>
+          </div>
+        </div>
+
+        <h3>2.2 パフォーマンスグループ別の詳細分析</h3>
+
+        <table class="data-table">
+          <tr>
+            <th>経過年数</th>
+
+            <th>上位10%</th>
+
+            <th>標準50%</th>
+
+            <th>下位25%</th>
+          </tr>
+
+          <tr>
+            <td>1年目</td>
+
+            <td>B2 (340万円)</td>
+
+            <td>B2 (340万円)</td>
+
+            <td>B2 (340万円)</td>
+          </tr>
+
+          <tr>
+            <td>3年目</td>
+
+            <td>P4 (430万円)</td>
+
+            <td>B1 (390万円)</td>
+
+            <td>B2 (340万円)</td>
+          </tr>
+
+          <tr>
+            <td>5年目</td>
+
+            <td>P2 (520万円)</td>
+
+            <td>P4 (430万円)</td>
+
+            <td>B1 (390万円)</td>
+          </tr>
+
+          <tr>
+            <td>10年目</td>
+
+            <td>M3 (700万円)</td>
+
+            <td>P1 (590万円)</td>
+
+            <td>P3 (480万円)</td>
+          </tr>
+
+          <tr>
+            <td>15年目</td>
+
+            <td>M1 (900万円)</td>
+
+            <td>M3 (700万円)</td>
+
+            <td>P2 (520万円)</td>
+          </tr>
+        </table>
+
+        <div class="alert-box alert-success">
+          <strong>成功の鍵：</strong
+          >最初の3-5年で差がつき始めます。この期間に技術力向上と
+          成果創出に集中することで、上位グループへの道が開けます。
+        </div>
+
+        <h3>2.3 昇進確率ヒートマップ</h3>
 
         <div class="graph-container">
+          <div class="graph-title">グレード別到達確率</div>
+          <img
+            src="career_simulation_graphs/09_grade_probability_heatmap.png"
+            alt="昇進確率"
+          />
+          <p class="graph-caption">
+            Manager層への到達は全体の15-20%程度。しかし、上位パフォーマーなら
+            10年以内に到達可能。早期の差別化が重要です。
+          </p>
+        </div>
+
+        <h3>2.4 残存率分析</h3>
+
+        <div class="graph-container">
+          <div class="graph-title">パフォーマンス別残存率</div>
+          <img
+            src="career_simulation_graphs/02_retention_rate.png"
+            alt="残存率"
+          />
+          <p class="graph-caption">
+            IT業界特有の高い転職率。10年後の残存率は40-60%。
+            優秀層ほど外部オファーが多いが、昇進が早いため残存率も比較的高い。
+          </p>
+        </div>
+      </section>
+      <!-- 資産形成シミュレーション -->
+      <section
+        id="asset-simulation"
+        class="section"
+      >
+        <h2>3. 資産形成シミュレーション詳細</h2>
+
+        <h3>3.1 投資 vs 貯金の圧倒的な差</h3>
+
+        <div class="graph-grid">
+          <div class="graph-container">
+            <div class="graph-title">20年間の資産推移比較</div>
+            <img
+              src="asset_simulation_graphs/01_asset_comparison_by_group.png"
+              alt="資産比較"
+            />
+            <p class="graph-caption">
+              標準グループでも20年後には1,054万円の差が発生。
+              これは複利効果による差で、早期開始の重要性を示しています。
+            </p>
+          </div>
+
+          <div class="graph-container">
+            <div class="graph-title">全グループの投資成果</div>
+            <img
+              src="asset_simulation_graphs/02_investment_comparison_all_groups.png"
+              alt="投資比較"
+            />
+            <p class="graph-caption">
+              老後2,000万円問題は15-20年で解決可能。
+              上位グループなら13年で到達します。
+            </p>
+          </div>
+        </div>
+
+        <h3>3.2 月額積立額の現実的な推移</h3>
+
+        <div class="graph-container">
+          <div class="graph-title">グループ別月額積立額</div>
           <img
             src="asset_simulation_graphs/03_monthly_investment_amount.png"
-            alt="月額積立額"
+            alt="月額積立"
           />
-          <p class="graph-caption">図5: グループ別の月額積立額推移</p>
+          <p class="graph-caption">
+            新NISA上限（月30万円）に到達するのは上位10%のみ。
+            標準グループは月5-10万円が現実的なラインです。
+          </p>
         </div>
 
-        <div class="success-box">
-          <h4>推奨積立額の目安</h4>
+        <div class="insight-box">
+          <h4>IT企業社員の積立戦略</h4>
 
-          <ul>
-            <li><strong>1-3年目：</strong>月3万円（手取りの15%）</li>
+          <p>高い昇給率を活かして、段階的に積立額を増やすことが重要。</p>
 
-            <li><strong>4-6年目：</strong>月5万円（手取りの20%）</li>
+          <ul style="list-style: none; padding: 0; margin-top: 20px">
+            <li>📈 1-3年目: 手取りの15%（月3万円）</li>
 
-            <li><strong>7-10年目：</strong>月7-10万円（手取りの25%）</li>
+            <li>📈 4-6年目: 手取りの20%（月5万円）</li>
+
+            <li>📈 7-10年目: 手取りの25%（月8万円）</li>
+
+            <li>📈 10年目以降: 手取りの30%（月10万円以上）</li>
           </ul>
         </div>
 
-        <h3>4.2 複利効果の威力</h3>
+        <h3>3.3 複利効果の実証</h3>
 
         <div class="graph-container">
+          <div class="graph-title">元本と運用益の内訳</div>
           <img
             src="asset_simulation_graphs/06_compound_interest_effect.png"
             alt="複利効果"
           />
-          <p class="graph-caption">図6: 元本と運用益の内訳（標準グループ）</p>
-        </div>
-
-        <p>
-          20年間の積立投資により、運用益が元本の40-50%に達します。これが複利効果の威力です。
-        </p>
-      </section>
-      <!-- ライフイベント対応 -->
-      <section
-        id="life-events"
-        class="section"
-      >
-        <h2>5. ライフイベントを考慮した現実的なプラン</h2>
-
-        <h3>5.1 主要なライフイベントと必要資金</h3>
-        <div class="graph-container">
-          <img
-            src="asset_simulation_with_life_events/11_life_events_simulation.png"
-            alt="ライフイベントシミュレーション"
-          />
-          <p class="graph-caption">図7: ライフイベントを考慮した資産推移</p>
-        </div>
-
-        <table>
-          <tr>
-            <th>ライフイベント</th>
-            <th>想定年次</th>
-            <th>必要資金</th>
-            <th>準備方法</th>
-          </tr>
-          <tr>
-            <td>一人暮らし開始</td>
-            <td>3年目</td>
-            <td>50万円</td>
-            <td>ボーナスから準備</td>
-          </tr>
-          <tr>
-            <td>車購入</td>
-            <td>5年目</td>
-            <td>200万円</td>
-            <td>2年前から月3万円追加貯蓄</td>
-          </tr>
-          <tr>
-            <td>結婚</td>
-            <td>7年目</td>
-            <td>300万円</td>
-            <td>3年前から準備開始</td>
-          </tr>
-          <tr>
-            <td>住宅購入頭金</td>
-            <td>10年目</td>
-            <td>500万円</td>
-            <td>投資とは別枠で準備</td>
-          </tr>
-        </table>
-
-        <div class="warning-box">
-          <p>
-            <strong>重要：</strong
-            >ライフイベント時でも、最低限の積立（月1-2万円）は継続することが長期的な資産形成の鍵です。
+          <p class="graph-caption">
+            20年後には運用益が元本の50%以上に。つまり、1,000万円の資産のうち
+            300万円以上は「お金が勝手に増えた分」です。
           </p>
         </div>
 
-        <h3>5.2 10年間の詳細分析</h3>
-        <div class="graph-container">
-          <img
-            src="asset_simulation_with_life_events/13_10years_detailed_analysis.png"
-            alt="10年詳細分析"
-          />
-          <p class="graph-caption">図8: 入社10年間の収支詳細分析</p>
+        <h3>3.4 リスクシナリオ分析</h3>
+
+        <div class="graph-grid">
+          <div class="graph-container">
+            <div class="graph-title">投資リターン別シナリオ</div>
+            <img
+              src="asset_simulation_graphs/04_risk_scenario_analysis.png"
+              alt="リスクシナリオ"
+            />
+            <p class="graph-caption">
+              悲観的シナリオ（3%）でも貯金の2倍以上。
+              基本シナリオ（5%）は過去の実績に基づく現実的な数値です。
+            </p>
+          </div>
+
+          <div class="graph-container">
+            <div class="graph-title">市場暴落シミュレーション</div>
+            <img
+              src="asset_simulation_graphs/05_market_crash_simulation.png"
+              alt="暴落シミュレーション"
+            />
+            <p class="graph-caption">
+              10年目に-40%の暴落があっても、20年後には通常シナリオの90%まで回復。
+              継続こそが最大の対策です。
+            </p>
+          </div>
         </div>
       </section>
-
-      <!-- 実践ガイド -->
+      <!-- ライフプランニング -->
       <section
-        id="action"
+        id="life-planning"
         class="section"
       >
-        <h2>6. 今すぐ始める実践ガイド</h2>
+        <h2>4. IT企業社員のライフプランニング</h2>
 
-        <h3>6.1 新入社員向け実践ガイド</h3>
+        <h3>4.1 ライフイベントを考慮した資産形成</h3>
+
         <div class="graph-container">
+          <div class="graph-title">ライフイベント込みの資産推移</div>
           <img
-            src="asset_simulation_with_life_events/12_practical_guide_for_new_employees.png"
+            src="asset_simulation_with_life_events/11_life_events_simulation.png"
+            alt="ライフイベント"
+          />
+          <p class="graph-caption">
+            結婚、住宅購入などの大型支出があっても、計画的な積立により
+            資産形成は十分可能。イベント時も最低限の積立継続が重要。
+          </p>
+        </div>
+
+        <h3>4.2 10年間の詳細収支分析</h3>
+
+        <div class="graph-container">
+          <div class="graph-title">入社10年間の詳細分析</div>
+          <img
+            src="asset_simulation_with_life_events/13_action_plan_dashboard.png"
+            alt="10年詳細"
+          />
+          <p class="graph-caption">
+            手取り収入の成長に合わせて、生活費と積立額のバランスを調整。
+            IT企業の高い昇給率により、生活水準を上げながら積立増額が可能。
+          </p>
+        </div>
+
+        <table class="data-table">
+          <tr>
+            <th>ライフイベント</th>
+
+            <th>想定時期</th>
+
+            <th>必要資金</th>
+
+            <th>IT企業社員の対策</th>
+          </tr>
+
+          <tr>
+            <td>一人暮らし開始</td>
+
+            <td>入社3年目（26歳）</td>
+
+            <td>50万円</td>
+
+            <td>ボーナスで準備、家賃補助制度を活用</td>
+          </tr>
+
+          <tr>
+            <td>車購入</td>
+
+            <td>入社5年目（28歳）</td>
+
+            <td>200万円</td>
+
+            <td>都心勤務なら不要、必要なら中古車検討</td>
+          </tr>
+
+          <tr>
+            <td>結婚</td>
+
+            <td>入社7年目（30歳）</td>
+
+            <td>300万円</td>
+
+            <td>共働きで費用分担、IT企業同士なら世帯年収1,000万円超</td>
+          </tr>
+
+          <tr>
+            <td>住宅購入</td>
+
+            <td>入社10年目（33歳）</td>
+
+            <td>頭金500万円</td>
+
+            <td>投資は継続、頭金は別途貯蓄で準備</td>
+          </tr>
+
+          <tr>
+            <td>第一子誕生</td>
+
+            <td>入社12年目（35歳）</td>
+
+            <td>年間100万円増</td>
+
+            <td>育児支援制度活用、在宅勤務で保育料削減</td>
+          </tr>
+        </table>
+
+        <div class="alert-box alert-warning">
+          <strong>重要：</strong>IT企業は福利厚生が充実している場合が多い。
+          家賃補助、育児支援、在宅勤務制度などを最大限活用することで、
+          積立余力を確保できます。
+        </div>
+      </section>
+      <!-- 実践プラン -->
+      <section
+        id="action-plan"
+        class="section"
+      >
+        <h2>5. 今すぐ始める実践プラン</h2>
+
+        <h3>5.1 新入社員向け実践ガイド</h3>
+
+        <div class="graph-container">
+          <div class="graph-title">実践的ガイドライン</div>
+          <img
+            src="asset_simulation_with_life_events/12_practical_guide_for_newcomers.png"
             alt="実践ガイド"
           />
-          <p class="graph-caption">図9: 新入社員のための実践的ガイドライン</p>
+          <p class="graph-caption">
+            積立開始タイミングが1年遅れるごとに、10年後の資産は100万円以上減少。
+            「今」始めることが最も重要です。
+          </p>
         </div>
 
-        <div class="success-box">
-          <h4>今すぐ実行すべき3ステップ</h4>
-          <ol>
-            <li>
-              <strong>NISA口座を開設</strong>（楽天証券・SBI証券がおすすめ）
-            </li>
-            <li>
-              <strong>全世界株式インデックスに月1万円から自動積立</strong>
-            </li>
-            <li><strong>給与天引きまたは自動振替で継続性を確保</strong></li>
-          </ol>
+        <h3>5.2 ステップバイステップガイド</h3>
+
+        <div class="step-guide">
+          <div class="step">
+            <div class="step-number">1</div>
+
+            <div class="step-title">口座開設</div>
+
+            <div class="step-description">
+              楽天証券かSBI証券で<br />
+              NISA口座を開設<br />
+              （所要時間: 30分）
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-number">2</div>
+
+            <div class="step-title">商品選択</div>
+
+            <div class="step-description">
+              eMAXIS Slim<br />
+              全世界株式を選択<br />
+              （迷う必要なし）
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-number">3</div>
+
+            <div class="step-title">自動設定</div>
+
+            <div class="step-description">
+              給与日翌日に<br />
+              月3万円から自動積立<br />
+              （変更は後でOK）
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-number">4</div>
+
+            <div class="step-title">継続</div>
+
+            <div class="step-description">
+              年1回見直し<br />
+              昇給時に増額検討<br />
+              （基本はほったらかし）
+            </div>
+          </div>
         </div>
 
-        <h3>6.2 アクションプラン</h3>
+        <h3>5.3 年次別アクションプラン</h3>
+
         <div class="graph-container">
+          <div class="graph-title">詳細アクションプラン</div>
+
           <img
             src="asset_simulation_with_life_events/13_action_plan_dashboard.png"
             alt="アクションプラン"
           />
-          <p class="graph-caption">図10: 年次別アクションプラン</p>
+          <p class="graph-caption">
+            年次ごとの具体的な行動指針。昇進・昇給のタイミングに合わせて
+            積立額を増やすことで、無理なく資産形成を加速できます。
+          </p>
         </div>
 
-        <h3>6.3 投資商品の選び方</h3>
-        <div class="highlight-box">
-          <h4>初心者におすすめの投資信託</h4>
-          <ul>
+        <h3>5.4 IT企業社員特有の投資戦略</h3>
+        <div class="insight-box">
+          <h4>あなたの強みを活かした資産形成</h4>
+          <ul style="list-style: none; padding: 0">
             <li>
-              <strong>eMAXIS Slim 全世界株式（オール・カントリー）</strong>
-              <ul>
-                <li>信託報酬: 0.05775%（業界最安水準）</li>
-                <li>純資産: 2兆円超で安定運用</li>
-                <li>分散: 約3,000銘柄でリスク分散</li>
-              </ul>
+              💻
+              <strong>高い昇給率：</strong
+              >年3-5%の昇給を前提に積立額を計画的に増額
             </li>
-            <li><strong>代替案：</strong>eMAXIS Slim 米国株式（S&P500）</li>
+            <li>
+              🏢
+              <strong>ストックオプション：</strong
+              >もし付与されたら、権利行使後は分散投資へ
+            </li>
+            <li>
+              🌐
+              <strong>転職市場価値：</strong
+              >スキルアップで転職時20-30%の年収アップも可能
+            </li>
+            <li>
+              🏠
+              <strong>リモートワーク：</strong
+              >地方移住で生活費削減、その分を投資へ
+            </li>
           </ul>
         </div>
-      </section>
 
-      <!-- リスクと対策 -->
-      <section class="section">
-        <h2>7. リスクと対策</h2>
-
-        <h3>7.1 市場暴落への対応</h3>
+        <h3>5.5 年収別シミュレーション</h3>
         <div class="graph-container">
+          <div class="graph-title">初任給別の資産形成比較</div>
           <img
-            src="asset_simulation_graphs/05_market_crash_simulation.png"
-            alt="暴落シミュレーション"
+            src="asset_simulation_with_life_events/14_salary_based_simulation.png"
+            alt="年収別シミュレーション"
           />
-          <p class="graph-caption">図11: 市場暴落時のシミュレーション</p>
-        </div>
-
-        <p>
-          過去のデータが示すように、長期積立投資では一時的な暴落があっても、継続することで必ず回復し、さらなる成長が期待できます。
-        </p>
-
-        <h3>7.2 よくある失敗と対策</h3>
-        <table>
-          <tr>
-            <th>よくある失敗</th>
-            <th>対策</th>
-          </tr>
-          <tr>
-            <td>「お金が貯まってから投資」と考える</td>
-            <td>月1万円からでも今すぐ開始</td>
-          </tr>
-          <tr>
-            <td>短期的な値動きに一喜一憂</td>
-            <td>10年以上の長期視点を持つ</td>
-          </tr>
-          <tr>
-            <td>個別株やFXから始める</td>
-            <td>インデックス投資で基礎を固める</td>
-          </tr>
-          <tr>
-            <td>生活防衛資金なしで全額投資</td>
-            <td>生活費3-6ヶ月分は現金確保</td>
-          </tr>
-        </table>
-      </section>
-
-      <!-- 総合ダッシュボード -->
-      <section class="section">
-        <h2>8. 総合まとめ</h2>
-
-        <div class="graph-container">
-          <img
-            src="asset_simulation_with_life_events/15_comprehensive_dashboard.png"
-            alt="総合ダッシュボード"
-          />
-          <p class="graph-caption">図12: 資産形成の総合ダッシュボード</p>
-        </div>
-
-        <div class="success-box">
-          <h4>成功のための重要ポイント</h4>
-          <ul>
-            <li>
-              <strong>早期開始：</strong
-              >1年の遅れが10年後に100万円以上の差を生む
-            </li>
-            <li>
-              <strong>自動化：</strong>給与天引きで「なかったもの」として積立
-            </li>
-            <li><strong>継続性：</strong>市場変動に惑わされず淡々と継続</li>
-            <li><strong>段階的増額：</strong>昇給に合わせて積立額も増やす</li>
-            <li><strong>NISA活用：</strong>年間360万円まで非課税で運用可能</li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- FAQ -->
-      <section class="section">
-        <h2>9. よくある質問（FAQ）</h2>
-
-        <h3>Q1: いくらから始められますか？</h3>
-        <p>
-          A:
-          100円から可能ですが、効果を実感するなら月1万円以上を推奨します。まずは少額でも始めることが重要です。
-        </p>
-
-        <h3>Q2: 損をすることはありますか？</h3>
-        <p>
-          A:
-          短期的にはマイナスになることもあります。しかし、15年以上の長期投資で、過去にマイナスになった例はほぼありません。
-        </p>
-
-        <h3>Q3: NISAとiDeCoはどちらがいいですか？</h3>
-        <p>
-          A:
-          まずNISAから始めましょう。NISAは引き出し自由ですが、iDeCoは60歳まで引き出せません。余裕があればiDeCoも追加で検討してください。
-        </p>
-
-        <h3>Q4: 暴落したらどうすればいいですか？</h3>
-        <p>
-          A:
-          何もせず、積立を継続してください。むしろ安く買えるチャンスと考えましょう。歴史的に見て、暴落後は必ず回復しています。
-        </p>
-
-        <h3>Q5: どの証券会社がおすすめですか？</h3>
-        <p>
-          A:
-          楽天証券かSBI証券がおすすめです。手数料が安く、取扱商品も豊富で、初心者にも使いやすいです。
-        </p>
-      </section>
-
-      <!-- 最終CTA -->
-      <section
-        class="section"
-        style="text-align: center; background: #e8f5f3"
-      >
-        <h2>10. 今すぐ行動を起こそう</h2>
-
-        <p style="font-size: 1.2rem; margin: 30px 0">
-          このガイドを読んだ今が、あなたの人生の転換点です。<br />
-          10年後、20年後の自分のために、今すぐ第一歩を踏み出しましょう。
-        </p>
-
-        <div style="margin: 40px 0">
-          <a
-            href="https://www.rakuten-sec.co.jp/ "
-            target="_blank"
-            class="action-button"
-            >楽天証券で口座開設</a
-          >
-          <a
-            href="https://www.sbisec.co.jp/ "
-            target="_blank"
-            class="action-button"
-            >SBI証券で口座開設</a
-          >
-        </div>
-
-        <div
-          class="highlight-box"
-          style="max-width: 800px; margin: 40px auto"
-        >
-          <h4>1年後のあなたへ</h4>
-          <p>
-            1年後、このページを見返したとき、「あの時始めて本当に良かった」と思えるはずです。投資は時間が最大の味方。今日が一番若い日です。
+          <p class="graph-caption">
+            初任給340万円は業界標準。しかし、スキル次第で400万円以上も可能。
+            初任給の差は10年後に300万円以上の資産差につながります。
           </p>
         </div>
       </section>
 
-      <!-- ダウンロード資料 -->
+      <!-- 総合ダッシュボード -->
       <section class="section">
-        <h2>11. ダウンロード資料</h2>
+        <h2>6. 総合分析ダッシュボード</h2>
 
-        <p>
-          以下の画像は保存して、いつでも確認できるようにしておくことをおすすめします：
+        <div class="graph-container">
+          <div class="graph-title">資産形成の全体像</div>
+          <img
+            src="asset_simulation_with_life_events/15_comprehensive_dashboard.png"
+            alt="総合ダッシュボード"
+          />
+          <p class="graph-caption">
+            すべての要素を統合した総合ダッシュボード。
+            キャリア、投資、ライフイベントのバランスを可視化。
+          </p>
+        </div>
+
+        <h3>6.1 10年後の到達点予測</h3>
+        <table class="data-table">
+          <tr>
+            <th>項目</th>
+            <th>上位10%</th>
+            <th>標準50%</th>
+            <th>下位25%</th>
+          </tr>
+          <tr>
+            <td>年収</td>
+            <td>700万円（M3）</td>
+            <td>590万円（P1）</td>
+            <td>480万円（P3）</td>
+          </tr>
+          <tr>
+            <td>資産額（投資）</td>
+            <td>1,285万円</td>
+            <td>1,036万円</td>
+            <td>728万円</td>
+          </tr>
+          <tr>
+            <td>月額積立額</td>
+            <td>15.3万円</td>
+            <td>12.9万円</td>
+            <td>9.0万円</td>
+          </tr>
+          <tr>
+            <td>運用益</td>
+            <td>385万円</td>
+            <td>310万円</td>
+            <td>218万円</td>
+          </tr>
+          <tr>
+            <td>残存率</td>
+            <td>60%</td>
+            <td>55%</td>
+            <td>55%</td>
+          </tr>
+        </table>
+
+        <h3>6.2 成功確率を高める要因</h3>
+        <div class="alert-box alert-success">
+          <strong>データが示す成功の法則：</strong>
+          <ol style="margin-left: 20px; margin-top: 10px">
+            <li>入社3年以内に積立投資を開始（遅れるほど不利）</li>
+            <li>最初の5年間で技術力を磨き、上位グループを目指す</li>
+            <li>昇給に合わせて積立額を自動的に増額する仕組み作り</li>
+            <li>ライフイベント時も最低限の積立は継続</li>
+            <li>NISA枠を最大限活用（年間360万円まで非課税）</li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- よくある質問（IT企業特化） -->
+      <section class="section">
+        <h2>7. IT企業社員のよくある質問</h2>
+
+        <h4>Q1: ストックオプションと投資信託、どちらを優先すべき？</h4>
+        <p style="margin-left: 20px">
+          <strong>A:</strong>
+          両方重要ですが、リスク分散の観点から投資信託をベースに、
+          ストックオプションは「ボーナス」と考えましょう。自社株に偏りすぎるのは危険です。
         </p>
 
-        <ul>
-          <li>
+        <h4>Q2: 転職を考えているが、投資は続けるべき？</h4>
+        <p style="margin-left: 20px">
+          <strong>A:</strong>
+          むしろ転職時こそ継続が重要。IT業界は転職で20-30%の年収アップも
+          可能なので、増えた分を積立に回せば資産形成が加速します。
+        </p>
+
+        <h4>Q3: 残業代が多い月は積立を増やすべき？</h4>
+        <p style="margin-left: 20px">
+          <strong>A:</strong>
+          基本は定額積立を推奨。残業代やボーナスは「追加投資」として、
+          年2回のスポット購入に活用するのが現実的です。
+        </p>
+
+        <h4>Q4: 副業収入がある場合の投資戦略は？</h4>
+        <p style="margin-left: 20px">
+          <strong>A:</strong>
+          副業収入は全額投資に回すのが理想。本業収入で生活し、
+          副業収入で資産形成すれば、10年で2,000万円も現実的です。
+        </p>
+
+        <h4>Q5: リモートワークで浮いた交通費はどうすべき？</h4>
+        <p style="margin-left: 20px">
+          <strong>A:</strong>
+          月2-3万円の交通費削減分は、そのまま積立額の上乗せに。
+          「元々なかったお金」として投資すれば、心理的負担もありません。
+        </p>
+      </section>
+
+      <!-- 最終メッセージ -->
+      <section
+        class="section"
+        style="
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          color: white;
+        "
+      >
+        <h2 style="color: white">8. あなたへの最終メッセージ</h2>
+
+        <div style="font-size: 1.2rem; line-height: 2; margin: 40px 0">
+          <p>
+            あなたは今、<strong>平均年齢27.8歳の若い組織</strong>で働いています。<br />
+            これは日本の一般的な企業では考えられない、圧倒的なアドバンテージです。
+          </p>
+          <p style="margin-top: 30px">
+            上場3年目の成長企業で、年間54名もの仲間が増えている。<br />
+            つまり、<strong>組織の拡大とともにポストも増える</strong>ということ。
+          </p>
+          <p style="margin-top: 30px">
+            データが示すように、この会社では<strong>11年目でDirector</strong>になった先輩がいます。<br />
+            大企業なら20年かかる道のりを、半分の期間で達成できる可能性がある。
+          </p>
+          <p style="margin-top: 30px">
+            そして何より、IT業界にいるあなたには<strong>市場価値の高いスキル</strong>が身についています。<br />
+            このスキルと若さ、そして正しい資産形成の知識があれば、<br />
+            <strong>10年後には必ず経済的自由への道が見えてくる</strong
+            >はずです。
+          </p>
+        </div>
+
+        <div
+          style="
+            background: rgba(255, 255, 255, 0.2);
+            padding: 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+          "
+        >
+          <h3 style="color: white; text-align: center; margin-bottom: 30px">
+            今すぐ行動を起こす3つの理由
+          </h3>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: repeat(3, 1fr);
+              gap: 30px;
+            "
+          >
+            <div style="text-align: center">
+              <div style="font-size: 3rem; margin-bottom: 10px">⏰</div>
+              <h4 style="color: white">時間価値</h4>
+              <p>1年の遅れ = 10年後に183万円の損失</p>
+            </div>
+            <div style="text-align: center">
+              <div style="font-size: 3rem; margin-bottom: 10px">📈</div>
+              <h4 style="color: white">複利効果</h4>
+              <p>20年で元本の1.5倍の運用益</p>
+            </div>
+            <div style="text-align: center">
+              <div style="font-size: 3rem; margin-bottom: 10px">🎯</div>
+              <h4 style="color: white">目標達成</h4>
+              <p>老後2000万円問題を40代で解決</p>
+            </div>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 60px">
+          <a
+            href="https://www.rakuten-sec.co.jp/ "
+            target="_blank"
+            style="
+              display: inline-block;
+              background: white;
+              color: #667eea;
+              padding: 20px 60px;
+              font-size: 1.3rem;
+              font-weight: bold;
+              text-decoration: none;
+              border-radius: 50px;
+              margin: 10px;
+              transition: all 0.3s;
+            "
+          >
+            楽天証券で今すぐ始める
+          </a>
+          <a
+            href="https://www.sbisec.co.jp/ "
+            target="_blank"
+            style="
+              display: inline-block;
+              background: white;
+              color: #667eea;
+              padding: 20px 60px;
+              font-size: 1.3rem;
+              font-weight: bold;
+              text-decoration: none;
+              border-radius: 50px;
+              margin: 10px;
+              transition: all 0.3s;
+            "
+          >
+            SBI証券で今すぐ始める
+          </a>
+        </div>
+
+        <p style="text-align: center; margin-top: 40px; opacity: 0.9">
+          ※
+          どちらも最短翌日から取引開始可能。NISA口座は1人1口座なので、どちらか選んで開設。
+        </p>
+      </section>
+
+      <!-- ダウンロードセクション -->
+      <section class="section">
+        <h2>9. 保存版資料ダウンロード</h2>
+
+        <div class="alert-box alert-success">
+          <strong>スマホに保存推奨：</strong
+          >以下の画像を保存して、定期的に見返すことで
+          モチベーション維持と進捗確認ができます。
+        </div>
+
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+          "
+        >
+          <div
+            style="
+              background: #f8f9fa;
+              padding: 30px;
+              border-radius: 10px;
+              text-align: center;
+            "
+          >
+            <h4>📱 1枚完全ガイド</h4>
+            <p>最重要ポイントをまとめた保存版</p>
             <a
               href="asset_simulation_with_life_events/17_complete_guide_one_page.png"
               download
-              >📥 1枚完全ガイド（保存版）</a
+              style="color: #667eea"
+              >ダウンロード</a
             >
-          </li>
-          <li>
+          </div>
+          <div
+            style="
+              background: #f8f9fa;
+              padding: 30px;
+              border-radius: 10px;
+              text-align: center;
+            "
+          >
+            <h4>📊 総合ダッシュボード</h4>
+            <p>全データを統合した分析結果</p>
             <a
               href="asset_simulation_with_life_events/15_comprehensive_dashboard.png"
               download
-              >📥 総合ダッシュボード</a
+              style="color: #667eea"
+              >ダウンロード</a
             >
-          </li>
-          <li>
-            <a
-              href="asset_simulation_with_life_events/12_practical_guide_for_new_employees.png"
-              download
-              >📥 実践ガイド</a
-            >
-          </li>
-        </ul>
+          </div>
+        </div>
       </section>
     </div>
 
-    <footer>
-      <p>© 2024 新入社員のための資産形成ガイド</p>
-      <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.8">
-        ※
-        本ガイドは情報提供を目的としており、投資判断は自己責任でお願いします。<br />
-        ※
-        過去のデータに基づくシミュレーションであり、将来の運用成果を保証するものではありません。
+    <footer
+      style="
+        background: #333;
+        color: white;
+        padding: 60px 20px;
+        text-align: center;
+      "
+    >
+      <p style="font-size: 1.2rem; margin-bottom: 20px">
+        IT企業新入社員のための資産形成ガイド
+      </p>
+      <p style="opacity: 0.8; line-height: 1.8">
+        本ガイドは実際の企業データ（従業員378名、平均年齢27.8歳）に基づいて作成されています。<br />
+        投資にはリスクがあります。最終的な判断は自己責任でお願いします。<br />
+        しかし、データが示すように、正しい知識と行動で必ず道は開けます。
+      </p>
+      <p style="margin-top: 40px; font-size: 1.1rem; color: #667eea">
+        あなたの成功を心から願っています。
       </p>
     </footer>
-
-    <script>
-      // スムーズスクロール
-      document.querySelectorAll('nav a').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-          e.preventDefault()
-          const target = document.querySelector(this.getAttribute('href'))
-          if (target) {
-            target.scrollIntoView({
-              behavior: 'smooth',
-              block: 'start',
-            })
-          }
-        })
-      })
-
-      // ページトップへ戻るボタン
-      window.addEventListener('scroll', () => {
-        if (window.pageYOffset > 300) {
-          document.body.classList.add('scrolled')
-        } else {
-          document.body.classList.remove('scrolled')
-        }
-      })
-    </script>
   </body>
 </html>
