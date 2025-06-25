@@ -313,7 +313,7 @@ def create_fig7():
                      color=colors['primary'], alpha=0.7 - i*0.1)
         
         # ラベルを追加
-        ax.text(0, i, f'{level}\n({grade})', ha='center', va='center', 
+        ax.text(0, i, f'{level})', ha='center', va='center', 
                 fontsize=11, fontweight='bold', color='white')
         ax.text(count/2 + 5, i, f'{count}名\n({pct:.1f}%)', 
                 ha='left', va='center', fontsize=10)
